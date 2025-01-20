@@ -1,5 +1,6 @@
 let numeroSecreto = 0;
 let intentos = 0;
+let listaNumerosSorteados = [];
 let numeroMaximo = 50;
 let intentosUsuario = 0;
 
@@ -43,9 +44,26 @@ function verificarIntento() {
 }
 
 function generarNumeroSecreto() {
+    let numeroUsuario = parseInt(document.getElementById('valorUsuario').value);
     let numeroGenerado = Math.floor(Math.random() * numeroMaximo + 1); 
-    return numeroGenerado;    
-       
+    console.log(numeroGenerado);
+    console.log(listaNumerosSorteados);
+    
+    
+    if (listaNumerosSorteados.length == numeroMaximo){
+        asignarTextoElemento("p", "Ya se sortearon todos lo numeros posibles");
+    }
+    else {
+
+        if (listaNumerosSorteados.includes(numeroGenerado)) {
+            return generarNumeroSecreto();
+        }
+        else{
+            
+            return numeroGenerado;
+            
+        }
+    }
 }
 
 function limpiarCaja(params) {
