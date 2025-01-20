@@ -89,38 +89,3 @@ function reiniciarJuego(params) {
 condicionesIniciales();
 
 
-let lista1 = [1,2,3,4,5,6];
-let lista2 = [6,5,4,3,2,1];
-
-function sumarListas(lista1, lista2) {
-    return lista1.map((num, i) => num + (lista2[i] || 0));
-    
-}
-
-console.log(sumarListas(lista1, lista2))
-
-function sumaLista(lista) {
-    let suma = 0;
-    lista.forEach(element => {
-        suma += element;
-    });
-    return suma;    
-}
-
-console.log(sumaLista(lista1));
-
-let lenguajesDeProgramacion = ['JavaScript', 'C', 'C++', 'Kotlin' , 'Python'];
-lenguajesDeProgramacion.push('Java', 'Ruby', 'GoLang');
-console.log(lenguajesDeProgramacion);
-
-function mostrarLenguajes(lista){
-    i = lista.length - 1;
-    while(i >= 0){
-        console.log(lista[i]);
-        i--;
-    }
-    return;
-}
-
-
-mostrarLenguajes(lenguajesDeProgramacion);
