@@ -1,7 +1,7 @@
 let numeroSecreto = 0;
 let intentos = 0;
 let listaNumerosSorteados = [];
-let numeroMaximo = 50;
+let numeroMaximo = 100;
 let intentosUsuario = 0;
 
 
@@ -15,14 +15,14 @@ function verificarIntento() {
 
     let numeroUsuario = parseInt(document.getElementById('valorUsuario').value);
 
-    if (intentosUsuario == 1){ 
+    if (intentosUsuario == 1){ //Verifica si el usuario se quedo sin intentos
         asignarTextoElemento('p', `Te quedaste sin intentos. El número secreto era ${numeroSecreto}.`);
 
         document.querySelector('#verificar').setAttribute('disabled', true);
         document.querySelector('#reiniciar').removeAttribute('disabled');
     }
     else{
-        if (numeroUsuario === numeroSecreto) {
+        if (numeroUsuario === numeroSecreto) { //Verifica si el ususario acerto el numero secreto
             asignarTextoElemento('p', `Acertaste el numero en ${intentos} ${(intentos === 1) ? 'vez':'veces'}`);
             document.querySelector('#verificar').setAttribute('disabled', true);
             document.querySelector('#reiniciar').removeAttribute('disabled');
@@ -72,7 +72,7 @@ function limpiarCaja(params) {
 }
 
 function condicionesIniciales(params) {
-    intentosUsuario = 8;   
+    intentosUsuario = 10;   
     asignarTextoElemento('h1', 'Juego del numero secreto');
     asignarTextoElemento('p', `Indica un numero del 1 al ${numeroMaximo}, tienes ${intentosUsuario} intentos`);
     numeroSecreto = generarNumeroSecreto();
